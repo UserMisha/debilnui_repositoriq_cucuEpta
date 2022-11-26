@@ -8,6 +8,7 @@ import sqlite3
 import logging
 
 
+
 config = configparser.ConfigParser()
 config.read("settings.ini")
 admin_id = config['bot']['admin_id'].split()
@@ -95,7 +96,7 @@ if not os.path.exists('videos'):
 async def start_command(message: types.Message):
     new_user(message.chat.id)
     await bot.send_message(chat_id=message.chat.id,
-                           text=' Приветствую!\n\nЯ помогаю скачивать видео без водяного знака с TikTok.\nПросто отправь мне ссылку на ролик. ')
+                           text=' Приветствую!\n\nЯ помогаю скачивать видео без водяного знака с TikTok.\nПросто отправь мне ссылку на ролик. \nПомощь /help')
 
 @dp.message_handler(commands='send')
 async def command_letter(message):
@@ -157,7 +158,7 @@ async def text(message: types.Message):
                 await bot.send_video(
                     chat_id=message.chat.id,
                     video=file.read(),
-                    caption='Скачано в @your'
+                    caption='Успешно скачано✅ @tiktokHD_bot'
                 )
             os.remove(path)
         except Exception as e:

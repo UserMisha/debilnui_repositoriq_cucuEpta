@@ -96,7 +96,8 @@ if not os.path.exists('videos'):
 async def start_command(message: types.Message):
     new_user(message.chat.id)
     await bot.send_message(chat_id=message.chat.id,
-                           text=' Приветствую!\n\nЯ помогаю скачивать видео без водяного знака с TikTok.\nПросто отправь мне ссылку на ролик. \nПомощь /help')
+                           text='👋Приветствую!\n\nЯ помогаю скачивать видео без водяного знака с TikTok.\nПросто отправь мне ссылку на ролик. \nПомощь /help')
+                          
 
 @dp.message_handler(commands='send')
 async def command_letter(message):
